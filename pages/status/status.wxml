@@ -1,0 +1,102 @@
+<!--pages/status/status.wxml-->
+<import src="../common/template.wxml" />
+<view class="status">
+  <view wx:for="{{['待借阅','待取书','待还书','待评价','已完成']}}" data-index="{{index}}" wx:key="{{index}}" class="{{index===status?'active':''}}" bindtap="changeStatus"><text>{{item}}</text></view>
+</view>
+
+<block wx:if="{{status===0}}">
+  <template is="remark" data="{{msg: '注意：每个学生同时最多可以借阅3本书'}}" />
+  <view class="list">
+    <view wx:for="{{statusBooks[status]}}" wx:key="{{index}}" class="item" capture-catch:touchstart="toggleCheck" data-index="{{index}}">
+      <view>
+        <template is="checkbox" data="{{checked:true}}" />
+      </view>
+      <template is="itembook" data="{{item:item,index:index}}" />
+    </view>
+  </view>
+  <view class="bottom-line">
+    <view class="desc">
+      <view class="box"><template is="checkbox" data="{{checked:true}}" /></view>
+      <text>当前可以借阅数: 3/3本</text>
+    </view>
+    <view class="action">
+      <navigator url="../../pages/borrow/success">借阅</navigator>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{status === 1}}">
+  <view class="thisRemark">
+    <view>注意：请您在<text>12小时内</text>取走书籍，如12小时内没有取走书籍，订单自动
+取消,取书时请提供:<text>“借阅单号”(家长可写在纸上给孩子代取)。</text></view>
+  </view>
+  <view>
+    <view class="order" wx:for="{{statusBooks[status]}}" wx:key="{{index}}">
+      <view class="top">
+        <text>借阅单号: QD0908220</text>
+        <text>取货时间: 11:22:33</text>
+      </view>
+      <template is="itembook" data="{{item:item,index:index}}" />
+      <view class="bottom-tip">规定时间内未取书，系统自动取消该书借阅</view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{status === 2}}">
+  <view class="thisRemark">
+    <view>注意：1、即取书后开始计时，<text>15天内</text>归还图书，预期未还，<text>每一天扣除1块
+         钱</text>押金，扣到该书的价格后判定该书以售卖。
+         2、所借图书如有污损、涂写、圈点及遗失，归还时候按原价赔偿。</view>
+  </view>
+  <view>
+    <view class="order" wx:for="{{statusBooks[status]}}" wx:key="{{index}}">
+      <view class="top">
+        <text>借阅单号: QD0908220</text>
+        <text>还书倒计时: 14天 11:22:33</text>
+      </view>
+      <template is="itembook" data="{{item:item, index:index}}" />
+      <view class="bottom">
+        <view class="header">
+          <text>借阅凭据</text>
+          <text>已取书</text>
+        </view>
+        <view class="body">
+          <view><image mode="aspectFill" src="../../static/images/child01.png"/></view>
+          <view><text>2018-05-06 9:25:22</text></view>
+        </view>
+      </view>
+      <view class="bottom-tip">规定时间内未取书，系统自动取消该书借阅</view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{status === 3}}">
+  <view class="order" wx:for="{{statusBooks[status]}}" wx:key="{{index}}">
+    <view class="top">
+      <text>借阅单号: QD0908220</text>
+      <text>交易成功</text>
+    </view>
+    <template is="itembook" data="{{item:item, index:index}}" />
+    <view class="bottom">
+      <view class="button-line">
+        <button>删除订单</button>
+        <button class="active" bindtap="comment">评价</button>
+      </view>
+    </view>
+  </view>
+</block>
+
+<block wx:if="{{status === 4}}">
+  <view class="order" wx:for="{{statusBooks[status]}}" wx:key="{{index}}">
+    <view class="top">
+      <text>借阅单号: QD0908220</text>
+      <text>交易完成</text>
+    </view>
+    <template is="itembook" data="{{item:item, index:index}}" />
+    <view class="bottom">
+      <view class="button-line">
+        <button>删除订单</button>
+      </view>
+    </view>
+  </view>
+</block>

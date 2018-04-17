@@ -1,0 +1,8 @@
+<template name="foot">
+  <view class="foot" style="flex-direction:row;">
+    <view class="foot-item">1</view>
+    <view class="foot-item">2</view>
+    <view class="foot-item">3</view>
+    <view class="foot-item">4</view>
+  </view>
+</template>

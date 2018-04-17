@@ -1,0 +1,15 @@
+<!--pages/borrow/borrow.wxml-->
+<import src="../common/template.wxml" />
+<view class="top">
+  <template is="remark" data="{{pos: 'left', msg:'注意：每个学生同时最多可以借阅3本书'}}"/>
+</view>
+<view>
+  <template is="itembook" data="{{item:book}}" />
+</view>
+<view class="top">
+  <template is="remark" data="{{pos: 'center', msg:'取书方式：请联系您所在的学校图书管理员'}}"/>
+</view>
+<view class="bottom-line">
+  <view class="desc">当前可以借阅数: 3/3本</view>
+  <view class="action"><navigator url="success">借阅</navigator></view>
+</view>

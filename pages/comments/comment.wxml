@@ -1,0 +1,18 @@
+<!--pages/status/status.wxml-->
+<import src="../common/template.wxml" />
+<view class="status">
+  <view wx:for="{{comments}}" data-index="{{index}}" wx:key="{{index}}" class="{{index===status?'active':''}}" bindtap="changeStatus">
+    <text>{{item.text}}</text>
+    <text>{{item.nums}}</text>
+  </view>
+</view>
+
+<view class="comment" wx:for="{{contents}}" data-index="{{index}}" wx:key="{{index}}">
+  <view class="header">
+    <image mode="aspectFit" src="../../static/images/head01.png"></image>
+    <text>{{item.name}}</text>
+  </view>
+  <template is="comment" data="{{style:'left', img: item.img, item: item}}" />
+</view>
+
+<view class="nothing" wx:if="{{status===4}}">暂无评价</view>

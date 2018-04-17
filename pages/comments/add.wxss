@@ -1,0 +1,66 @@
+/* pages/comments/add.wxss */
+page{
+  background-color: #e3e5e9;
+}
+.add{
+  background-color: white;
+  margin-top: 10rpx;
+}
+.add > .header{
+  box-sizing: border-box;
+  border-bottom: 1rpx solid #e3e5e9;
+  padding: 16rpx 24rpx;
+}
+.add > .header > image{
+  width: 80rpx;
+  height: 70rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.add > .header > text{
+  font-size: 28rpx;
+  color: #4f4f4f;
+}
+.add > .header > view{
+  padding-top: 6rpx;
+  margin-left: 36rpx;
+  display: inline-block;
+  vertical-align: middle;
+}
+.add > .header > view > image{
+  width: 40rpx;
+  height: 34rpx;
+  margin-right: 26rpx;
+}
+.add > .body{
+  padding: 20rpx 30rpx;
+}
+.add > .body > textarea{
+  width: 100%;
+  min-height: 180rpx;
+  font-size: 28rpx;
+}
+.add > .body > .selectImage > image{
+  width: 162rpx;
+  height: 162rpx;
+}
+.bottom{
+  padding: 0 58rpx;
+  text-align: right;
+}
+.bottom > button{
+  display: inline-block;
+  background-color: white;
+  border: 1rpx solid #f3542a;
+  color: #f3542a;
+  width: 145rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  border-radius: 23rpx;
+  font-size: 20rpx;
+}
+.bottom > button:active{
+  color: white;
+  border-color: transparent;
+  background-color: #f3542a;
+}

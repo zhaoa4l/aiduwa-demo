@@ -1,0 +1,51 @@
+<import src="../common/template.wxml" />
+
+<!--slide-->
+<view class="slide">
+  <swiper indicator-dots="{{swiperConfig.indicatorDots}}"
+    autoplay="{{swiperConfig.autoplay}}" interval="{{swiperConfig.interval}}" duration="{{swiperConfig.duration}}">
+    <block wx:key="{{index}}" wx:for="{{swiperConfig.banners}}">
+      <swiper-item>
+        <image src="{{item.url}}" class="slide-image" width="100%" height="auto"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<!--tabs-->
+<view class="tabs">
+  <view class="tab-item {{tabValue===0 ? 'active' : ''}}" data-value="0" bindtap="selectTab">
+    <image mode="aspectFill" src="../../static/img/icon-tab-active03.png" />
+    <image mode="aspectFill" src="../../static/img/icon-tab03.png" />
+    <text>热度排行</text>
+  </view>
+  <view class="tab-item {{tabValue===1 ? 'active' : ''}}" data-value="1" bindtap="selectTab">
+    <image mode="aspectFill" src="../../static/img/icon-tab-active02.png" />
+    <image mode="aspectFill" src="../../static/img/icon-tab02.png" />
+    <text>新书推荐</text>
+  </view>
+  <view class="tab-item {{tabValue===2 ? 'active' : ''}}" data-value="2" bindtap="selectTab">
+    <image mode="aspectFill" src="../../static/img/icon-tab-active01.png" />
+    <image mode="aspectFill" src="../../static/img/icon-tab01.png" />
+    <text>专家推荐</text>
+  </view>
+</view>
+
+<!--select-->
+<view class="select-wrap">
+  <scroll-view class="select" scroll-x="true">
+      <view class="select-item {{item.value===gradeValue ? 'active' : ''}}" wx:key="{{index}}" wx:for="{{grades}}" data-value="{{item.value}}" bindtap="selectGrade">{{item.text}}</view>
+  </scroll-view>
+  <view class="more">
+    <image mode="aspectFill" src="../../static/img/icon-arrow01.png"></image>
+  </view>
+</view>
+
+<!--content-->
+<scroll-view class="content" scroll-x="true" style="width: 100%">
+    <template is="itembook"
+      wx:key="{{index}}"
+      wx:for="{{books}}"
+      data="{{index:index, item:item}}" />
+</scroll-view>
+<view class="bottom-said">木有更多了哦~</view>

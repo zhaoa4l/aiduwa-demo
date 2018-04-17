@@ -1,0 +1,174 @@
+/* pages/detail/detail.wxss */
+.swiper{
+  border-top: 4rpx solid #e3e5e9;
+  border-bottom: 4rpx solid #e3e5e9;
+}
+.swiper image{
+  width: 100%;
+}
+
+.desc{
+  padding: 12rpx 24rpx;
+  color: #313131;
+  border-bottom: 2rpx solid #e3e5e9;
+}
+.desc > .title{
+  line-height: 1.4;
+  font-size: 32rpx;
+}
+.desc > text{
+  font-size: 22rpx;
+  color: #d23333;
+}
+.desc > .info{
+  position: relative;
+  padding: 30rpx 0;
+}
+.desc > .info > .share{
+  position: absolute;
+  right: 0;
+  bottom: 28rpx;
+}
+.desc > .info > .share > view{
+  margin-left: 28rpx;
+  display: inline-block;
+  font-size: 26rpx;
+  color: #6c6c6c;
+}
+.desc > .info > .share image{
+  vertical-align: middle;
+  margin-right: 5rpx;
+  width: 25rpx;
+  height: 26rpx;
+}
+.desc > .info > .share text{
+  vertical-align: middle;
+}
+
+.numbers{
+  width: 100%;
+  display: table;
+  border-bottom: 1rpx solid #e3e5e9;
+}
+.numbers > view{
+  width: 33.33%;
+  height: 84rpx;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 24rpx;
+  color: #4a4a4a;
+}
+.numbers > view.active,
+.numbers > view:first-of-type{
+  color: #ee0000;
+}
+
+.gist{
+  padding: 18rpx 20rpx;
+  border-bottom: 1rpx solid #e3e5e9;
+}
+.gist > .item{
+  margin-bottom: 10rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 24rpx;
+}
+.gist > .item > view:first-of-type{
+  width: 134rpx;
+  text-align: right;
+  color: #e30000;
+}
+.gist > .item > view:last-of-type{
+  width: 600rpx;
+}
+
+.comments > .head,
+.content > .head{
+  background-color: #f4f4f4;
+  width: 100%;
+  padding: 40rpx 0;
+  font-size: 24rpx;
+  color: #8e8e8e;
+  text-align: center;
+}
+.comments > .head::before,
+.comments > .head::after,
+.content > .head::before,
+.content > .head::after{
+  background-color: #bebebe;
+  content: " ";
+  width: 104rpx;
+  display: inline-block;
+  margin: 6rpx 10rpx;
+  height: 1rpx;
+}
+.comments > .head > image,
+.content > .head > image{
+  display: inline-block;
+  width: 27rpx;
+  height: 23rpx;
+  margin-right: 8rpx;
+  vertical-align: middle;
+}
+.comments > .head > text,
+.content > .head > text{
+  display: inline-block;
+  vertical-align: middle;
+}
+.content > .body{
+  padding-bottom: 125rpx;
+  text-align: center;
+}
+.actions{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+.actions > view{
+  height: 124rpx;
+}
+.actions > .pre{
+  box-sizing: border-box;
+  padding-top: 20rpx;
+  background-color: white;
+  width: 176rpx;
+  text-align: center;
+}
+.actions > .add,
+.actions > .once{
+  width: 287rpx;
+  line-height: 124rpx;
+  text-align: center;
+  font-size: 38rpx;
+  color: white;
+}
+.actions > .add{
+  background-color: #feba03;
+}
+.actions > .once{
+  background-color: #ee1111;
+}
+
+/* 评论 */
+.comments > .top{
+  padding: 0 32rpx;
+  background-color: white;
+  height: 70rpx;
+  line-height: 70rpx;
+  border-top: 1rpx solid #e3e5e9;
+  border-bottom: 1rpx solid #e3e5e9;
+  font-size: 24rpx;
+  color: #8e8e8e;
+}
+.comments > .top > navigator{
+  padding: 0 15rpx;
+  margin-right: -15rpx;
+  float: right;
+  color: #3083c4;
+  text-decoration: underline;
+}
+

@@ -1,0 +1,5 @@
+<!--pages/activity/activity.wxml-->
+<view class="container">
+  <image mode="aspectFit" src="../../static/images/activity01.png"></image>
+  <image mode="aspectFit" src="../../static/images/activity02.png"></image>
+</view>

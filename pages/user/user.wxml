@@ -1,0 +1,54 @@
+<import src="../common/template.wxml" />
+<!--pages/userCenter/user.wxml-->
+<view class="header">
+  <image mode="aspectFit" src="../../static/images/head01.png"></image>
+  <view class="desc">
+    <text>青岛市第一小学</text>
+    <text>王思言（三年二班）</text>
+  </view>
+</view>
+<view class="status">
+  <navigator url="../../pages/status/status" class="line">
+    <text>我的借阅状态</text>
+    <text>查看全部借阅</text>
+    <image mode="aspectFit" src="../../static/img/icon-arrow02.png"></image>
+  </navigator>
+  <view class="menu">
+    <view class="item">
+      <navigator url="../../pages/status/status?query=0">
+        <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu10.png', text: '待借阅'}}" />
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../../pages/status/status?query=1">
+        <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu08.png', text: '待取书'}}" />
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../../pages/status/status?query=2">
+        <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu06.png', text: '待还书', label: 3}}" />
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../../pages/status/status?query=3">
+        <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu07.png', text: '待评价', label: 1}}" />
+      </navigator>
+      </view>
+    <view class="item">
+      <navigator url="../../pages/status/status?query=4">
+        <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu09.png', text: '待完成'}}" />
+      </navigator>
+    </view>
+  </view>
+</view>
+<view class="list">
+  <view wx:for="{{['绑定借阅证','我的押金管理','我的预订','我的收藏','我的足迹','反馈']}}" wx:key="{{index}}" class="item" bindtap="otherMenu">
+    <text>{{item}}</text>
+    <image src="../../static/img/icon-arrow02.png"></image>
+  </view>
+</view>

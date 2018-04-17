@@ -1,0 +1,57 @@
+/* pages/comments/comment.wxss */
+page{
+  background-color: #e3e5e9;
+}
+.status{
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 2rpx solid #e3e5e9;
+  padding-top: 15rpx;
+  padding-bottom: 5rpx;
+  color: #2c2c2c;
+  font-size: 28rpx;
+}
+.status > view{
+  width: 20%;
+  text-align: center;
+}
+.status > view > text{
+  display: block;
+}
+.status > view > text:last-of-type{
+  font-size: 22rpx;
+}
+.status > view.active{
+  color: #e30000;
+}
+
+.comment{
+  margin-top: 10rpx;
+  background-color: white;
+  padding: 0 28rpx;
+}
+.comment > .header{
+  padding: 26rpx 0;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.comment > .header > image{
+  margin-right: 15rpx;
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+}
+.comment > .header > text{
+  font-size: 22rpx;
+  color: #313131;
+}
+
+.nothing{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  z-index: 50;
+  transform: translate(-50%, -50%);
+  font-size: 40rpx;
+  color: #929292;
+}

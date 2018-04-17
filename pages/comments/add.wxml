@@ -1,0 +1,30 @@
+<!--pages/comments/add.wxml-->
+<view class="add">
+  <view class="header">
+    <image mode="aspectFit" src="../../static/img/icon-cover.png"></image>
+    <text>书籍评价</text>
+    <view>
+      <image wx:for="{{[0,1,2,3]}}" wx:key="{{index}}" mode="aspectFit" src="../../static/img/icon-heart.png"></image>
+      <image wx:for="{{[0]}}" wx:key="{{index}}" mode="aspectFit" src="../../static/img/icon-heart-empty.png"></image>
+    </view>
+    <text>好</text>
+  </view>
+  <view class="body">
+    <textarea value="这本书很好，孩子读了几天感觉学习成绩有所提高！学习成绩有所提高！学习成绩有所提高！学习成绩有所提高学习成绩有所提高！学习成绩有所提高！"></textarea>
+    <view class="selectImage">
+      <image mode="aspectFit" src="../../static/img/icon-upload.png" bindtap="scan"></image>
+      <image mode="aspectFit" src="{{item}}" wx:for="{{pictures}}" wx:key="{{index}}"></image>
+    </view>
+  </view>
+  <view class="header">
+    <text>管理员服务评价</text>
+    <view>
+      <image wx:for="{{stars}}" wx:key="{{index}}" mode="aspectFit" src="../../static/img/icon-heart.png"></image>
+      <image wx:for="{{[0]}}" wx:key="{{index}}" mode="aspectFit" src="../../static/img/icon-heart-empty.png"></image>
+    </view>
+    <text>好</text>
+  </view>
+  <view class="bottom">
+    <button bindtap="submit">提交</button>
+  </view>
+</view>

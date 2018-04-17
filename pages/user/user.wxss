@@ -1,0 +1,106 @@
+/* pages/userCenter/user.wxss */
+page{
+  background-color: #e3e5e9;
+}
+.header{
+  box-sizing: border-box;
+  background-color: #de2b13;
+  width: 100%;
+  padding: 40rpx 42rpx;
+  border-top: 6rpx solid #e3e5e9;
+  border-bottom: 6rpx solid #e3e5e9;
+}
+.header > image{
+  vertical-align: middle;
+  width: 144rpx;
+  height: 144rpx;
+  margin-right: 14rpx;
+  border: 1rpx solid #fc766a;
+  border-radius: 50%;
+}
+.header > .desc{
+  vertical-align: middle;
+  display: inline-block;
+  color: white;
+  font-size: 28rpx;
+}
+.header > .desc > text{
+  display: block;
+}
+
+.status{
+  background-color: white;
+}
+.status > .line{
+  position: relative;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding-left: 26rpx;
+  font-size: 32rpx;
+  color: #585858;
+}
+.status > .line > text:last-of-type{
+  float: right;
+  padding-right: 45rpx;
+  font-size: 26rpx;
+  color: #969696;
+}
+.status > .line > image{
+  position: absolute;
+  right: 15rpx;
+  top: 23rpx;
+  width: 19rpx;
+  height: 32rpx;
+}
+.status > .menu{
+  display: flex;
+  padding: 40rpx 0;
+  flex-direction: row;
+}
+.status > .menu > .item{
+  position: relative;
+  width: 20%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #585858;
+}
+.status > .menu > .item:active{
+  color: black;
+}
+.status > .menu > .item > image{
+  display: block;
+  margin: auto;
+  width: 50rpx;
+  height: 50rpx;
+  margin-bottom: 12rpx;
+}
+.status > .menu > .item > label{
+  background-color: white;
+  position: absolute;
+  left: 50%;
+  top: -16rpx;
+  display: block;
+  width: 32rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  color: #d72727;
+  border: 3rpx solid #d72727;
+  border-radius: 50%;
+}
+
+.list{
+  margin-top: 12rpx;
+}
+.list > .item{
+  background-color: white;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding: 0 28rpx;
+  border-bottom: 1rpx solid #e3e5e9;
+}
+.list > .item > image{
+  width: 19rpx;
+  height: 32rpx;
+  float: right;
+  margin-top: 23rpx;
+}

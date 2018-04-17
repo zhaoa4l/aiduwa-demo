@@ -1,0 +1,23 @@
+<!--pages/borrow/success.wxml-->
+<import src="../common/template.wxml" />
+<view class="top">
+  <view>
+    <text>待取书</text>
+    <text>倒计时: 12:59:58</text>
+  </view>
+  <view>
+    <navigator open-type="switchTab" url="../../pages/index/index">
+      <text>返回首页</text>
+    </navigator>
+  </view>
+</view>
+<view class="tips">
+  <text>取书提醒 :</text>
+  <text>在你的借阅订单生效后，请您在12小时内取走该书，如12小时内没有取走该书，订单自动取消。</text>
+</view>
+<view class="title">
+  <text>您可能感兴趣的书</text>
+</view>
+<view>
+  <template wx:for="{{books}}" wx:key="{{index}}" is="itembook" data="{{item:item, index:index}}"/>
+</view>

@@ -1,0 +1,48 @@
+<!--pages/library.wxml-->
+<import src="../common/template.wxml" />
+
+<view class="search">
+  <icon type="search" size="16"/>
+  <input confirm-type="search" bindfocus="searchFocus" placeholder="点击搜索你想看的书" bindconfirm="search"></input>
+  <icon type="clear" size="20"/>
+  <text bindtap="cancel" wx:if="{{isFocus}}">取消</text>
+</view>
+<view class="search-tips" wx:if="{{isFocus && !showResult}}">
+  <text>历史搜索</text>
+  <text bindtap="search">一年级数学</text>
+  <text bindtap="search">五年级语文</text>
+  <button class="clear" >
+    <text>清空历史搜索</text>
+  </button>
+</view>
+
+<view class="tab" wx:if="{{!isFocus && !showResult}}">
+  <view class="{{selectTab === 0 ? 'active' : ''}}" bindtap="selectTab" data-index="0">
+    <text>本校图书</text>
+  </view>
+  <view class="{{selectTab === 1 ? 'active' : ''}}" bindtap="selectTab" data-index="1">
+    <text>全部图书</text>
+  </view>
+</view>
+
+<view class="content" wx:if="{{!isFocus && !showResult}}">
+  <view class="left">
+    <view wx:for="{{items}}" wx:key="{{index}}" class="item{{selectGrade===index ? ' active' : ''}}" bindtap="selectGrade" data-index="{{index}}">{{item}}</view>
+  </view>
+  <view class="right">
+    <view class="item" wx:for="{{items}}" wx:key="{{index}}" bindtap="search">
+      <text>{{item}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="result" wx:if="{{showResult}}">
+  <view class="bar">
+    <view bindtap="selectResult" data-index="0" class="{{resultIndex===0?'active':''}}">好评度</view>
+    <view bindtap="selectResult" data-index="1" class="{{resultIndex===1?'active':''}}">新品</view>
+    <view bindtap="selectResult" data-index="2" class="{{resultIndex===2?'active':''}}">阅读量</view>
+  </view>
+  <view wx:for="{{books}}" wx:key="{{index}}" class="item">
+    <template is="itembook" data="{{item:item, index:index}}" />
+  </view>
+</view>

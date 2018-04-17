@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/comments/add",
+    "pages/comments/comment",
+    "pages/detail/detail",
+    "pages/library/library",
+    "pages/user/user",
+    "pages/status/status",
+    "pages/borrow/success",
+    "pages/borrow/borrow",
+    "pages/activity/activity"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "爱读娃",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#ec0000",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/img/icon-menu03.png",
+        "selectedIconPath": "static/img/icon-menu-active03.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/library/library",
+        "iconPath": "static/img/icon-menu02.png",
+        "selectedIconPath": "static/img/icon-menu-active02.png",
+        "text": "图书馆"
+      },
+      {
+        "pagePath": "pages/activity/activity",
+        "iconPath": "static/img/icon-menu11.png",
+        "selectedIconPath": "static/img/icon-menu-active11.png",
+        "text": "活动"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "iconPath": "static/img/icon-menu04.png",
+        "selectedIconPath": "static/img/icon-menu-active04.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
+}

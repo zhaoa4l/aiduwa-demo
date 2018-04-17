@@ -1,0 +1,80 @@
+<!--pages/detail/detail.wxml-->
+<import src="../common/template.wxml" />
+<view class="swiper">
+  <swiper indicator-dots="{{indicatorDots}}"
+    autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+    <block wx:for="{{imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="desc">
+  <view class="title">{{name ? name : '小学教材全解 五年级语文(下) 人教版TJ2018春 教材同步学习工具书'}}</view>
+  <text>押金300元，终身免费读</text>
+  <view class="info">
+    <template is="readnumbers" />
+    <view class="share">
+      <view>
+        <image mode="aspectFit" src="../../static/img/icon-share.png"></image>
+        <text>分享</text>
+      </view>
+      <view>
+        <image mode="aspectFit" src="../../static/img/icon-star.png"></image>
+        <text>收藏 (6156人气)</text>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="numbers">
+  <view>剩余: 0本</view>
+  <view>在读: 12本</view>
+  <view>总量: 0</view>
+</view>
+<view class="gist">
+  <view class="item">
+    <view>入选依据：</view>
+    <view>大纲;****奖项；200*年100本必读书目；某某某学
+校法定书籍；某某某大学专家推荐书籍；</view>
+  </view>
+  <view class="item">
+    <view>入选标准：</view>
+    <view>培养孩子**岁认识能力；对某某某实物的鉴别能力；
+对某某某的欣赏能力；培养感恩的心态；</view>
+  </view>
+</view>
+
+<view class="comments">
+  <view class="head">
+    <image mode="aspectFill" src="../../static/img/icon-comment.png"></image>
+    <text>评价</text>
+  </view>
+  <view class="top">
+    <text>评价(25666)</text>
+    <navigator url="/pages/comments/comment">查看全部</navigator>
+  </view>
+  <template is="comment" data="{{img:4}}" />
+  <template is="comment" data="{{img:4}}" />
+</view>
+
+<view class="content">
+  <view class="head">
+    <image mode="aspectFill" src="../../static/img/icon-title01.png"></image>
+    <text>详情</text>
+  </view>
+  <view class="body">
+    <image mode="widthFix" src="../../static/images/detail01.jpg"></image>
+  </view>
+</view>
+
+<view class="actions">
+  <view class="pre">
+    <navigator url="../../pages/status/status">
+      <template is="statusitem" 
+          data="{{src: '../../static/img/icon-menu10.png', text: '待借阅', label: 2}}" />
+    </navigator>
+  </view>
+  <view class="add" bindtap="add">加入借阅</view>
+  <view class="once"><navigator url="../../pages/borrow/borrow">立即借阅</navigator></view>
+</view>
